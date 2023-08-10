@@ -24,4 +24,18 @@ chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
 chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
 cd sonarqube-9.4.0.54424/bin/linux-x86-64/
 ./sonar.sh start
+(or)
+[sudo wget -O /etc/yum.repos.d/sonar.repo http://downloads.sourceforge.net/project/sonar-pkg/rpm/sonar.repo]
 ------------------------------------------------------
+ sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+ sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+ sudo yum install -y apache-maven
+--------------------------------------------------------------
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+ sudo amazon-linux-extras install epel -y
+ yum install jenkins -y
+ service jenkins start & chkconfig jenkins on
+--------------------------------------------------------------------------------
+
+
